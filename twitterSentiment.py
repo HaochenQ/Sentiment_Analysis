@@ -47,7 +47,7 @@ df3=pd.read_csv('test.csv',sep=',')
 #df1=SelectPercentile(chi2,percentile=99).fit_transform(df1,label_train)
 #df2=SelectPercentile(chi2,percentile=99).fit_transform(df2,label_eval)
 
-'''# leveraging of SVM
+# leveraging of SVM
 model_svm=svm.SVC(C=1, cache_size=200, class_weight=None, coef0=0.0,
     decision_function_shape='ovo', degree=1, gamma='scale', kernel='rbf',
     max_iter=-1, probability=False, random_state=None, shrinking=True,
@@ -90,8 +90,6 @@ report2 = report(label_eval,result_tree,digits=5)
 print('\n',report2)
 
 
-
-
 # leveraging of Naive Bayes
 model_NB = MultinomialNB()
 model_NB.fit(df1,label_train)
@@ -99,7 +97,7 @@ result_NB = model_NB.predict(df2)
 
 report3 = report(label_eval,result_NB,digits=5)
 print('\n',report3)
-'''
+
 
 # random forest
 model_Rforest = RandomForestClassifier(n_estimators=10,random_state=10) # num of trees in forest
@@ -124,8 +122,8 @@ result_Rf = model_Rforest.predict(df2)
 
 report42 = report(label_eval,result_Rf,digits=5)
 print('\n',report42)
-'''
-# NN
+
+# NearestNeighbour
 model_nn=KNeighborsClassifier(n_neighbors=20)
 model_nn.fit(df1,label_train)
 result_nn = model_nn.predict(df2)
@@ -148,4 +146,3 @@ result_nn = model_nn.predict(df2)
 
 report52 = report(label_eval,result_nn,digits=5)
 print('\n',report52)
-'''
